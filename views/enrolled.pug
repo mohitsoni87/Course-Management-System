@@ -1,0 +1,8 @@
+include homepage.pug
+h3 Enrolled Courses
+each Value in enrolled
+    table
+        tr
+            td
+                h4 #{Value} - #{courses[Value]}
+                     

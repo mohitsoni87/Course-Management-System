@@ -1,0 +1,31 @@
+include homepage.pug
+ul
+if !status
+    each Value, Key in courses
+        table
+            tr
+                td
+                    h4 #{Key}
+                td
+                    h4 #{Value}
+
+else
+
+    each Value, Key in courses
+        table
+            tr
+                td
+                     b 
+                        h4 #{Key}
+                td
+                    h4 #{Value}
+                td
+                    if enrolled.includes(Key)
+                        h4 ENROLLED
+                    else
+                        form(action="/enroll/"  + User.regno + "/"+ Key method="POST")
+                            input(type="submit" value="Enroll") 
+
+
+                            
+            
